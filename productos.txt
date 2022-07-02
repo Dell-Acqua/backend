@@ -1,9 +1,26 @@
-
 [
   {
     "title": "Lechuga Hidroponica",
     "price": 150,
     "thumbnail": "imgLechuga",
     "id": 1
+  },
+  {
+    "title": "Lechuga Hidroponica",
+    "price": 150,
+    "thumbnail": "imgLechuga",
+    "id": 3
+  },
+  {
+    "title": "Lechuga Hidroponica",
+    "price": 150,
+    "thumbnail": "imgLechuga",
+    "id": 4
+  },
+  {
+    "title": "Lechuga Hidroponica",
+    "price": 150,
+    "thumbnail": "imgLechuga",
+    "id": 5
   }
 ]
