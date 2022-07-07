@@ -102,13 +102,13 @@ class Contenedor{
 }
 
 
-const articulo = new Contenedor(productos = {
-    title: 'Lechuga Hidroponica',
-    price: 150,
-    thumbnail: 'imgLechuga'
-});
+// const articulo = new Contenedor(productos = {
+//     title: 'Lechuga Hidroponica',
+//     price: 150,
+//     thumbnail: 'imgLechuga'
+// });
 
-const miContenedor = new Contenedor2('./productos.txt')
+const miContenedor = new Contenedor('./productos.txt')
 
 // articulo.save(productos);
 // articulo.getById(1);
