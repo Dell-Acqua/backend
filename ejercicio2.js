@@ -1,4 +1,8 @@
+const express = require('express')
 const fs = require('fs')
+const app = express()
+const PORT = 8080
+
 
 class Contenedor{
     constructor() {
@@ -104,8 +108,39 @@ const articulo = new Contenedor(productos = {
     thumbnail: 'imgLechuga'
 });
 
-articulo.save(productos);
-articulo.getById(1);
-articulo.getAll();
-articulo.deleteById(2)
-articulo.deleteAll();
+const miContenedor = new Contenedor2('./productos.txt')
+
+// articulo.save(productos);
+// articulo.getById(1);
+// articulo.getAll();
+// articulo.deleteById(2)
+// articulo.deleteAll();
+
+const server = app.listen(PORT, () => {
+    console.log(`Servidor http corriendo en el puerto ${server.address().port}`);
+  });
+
+  app.get('/', (req, res) => {
+    res.send('Verificar productos ingresando a /productos');
+  });
+
+  app.get('/productos', async (req, res) => {
+    try {
+      let productos = await miContenedor.getAll();
+      res.send(productos);
+    } catch (e) {
+      console.log(e);
+    }
+  });
+
+  app.get('/productoRandom', async (req, res) => {
+    try {
+      let productos = await miContenedor.getAll();
+      const idRandom = Math.floor(Math.random() * productos.length);
+      res.send(productos[idRandom]);
+    } catch (e) {
+      console.log(e);
+    }
+  });
+  
+  server.on('error', (error) => console.log(`Error en el servidor: ${error}`));
